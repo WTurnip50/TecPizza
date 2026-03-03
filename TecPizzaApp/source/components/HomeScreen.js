@@ -1,8 +1,13 @@
 import React from "react";
-import { StyleSheet,SafeAreaView, Text, TextInput, TouchableOpacity,Button } from "react-native";
+import { StyleSheet,SafeAreaView, Text,TouchableOpacity,Button, TextInput } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function HomeScreen(){
+     const navigation = useNavigation()
+    const goBack = ()=>{
+        navigation.replace('Login')
+    }
     return(
         <SafeAreaView style={styles.Container}>
             <Text style={styles.Text}>Menú Principal</Text>
@@ -16,10 +21,9 @@ export default function HomeScreen(){
             <TouchableOpacity style={styles.Button}>
                 <Text style={styles.buttonText}>About us</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.Button}>
+            <TouchableOpacity style={styles.Button} onPress={goBack}>
                 <Text style={styles.buttonText}>Exit</Text>
             </TouchableOpacity>
-
             </SafeAreaView>
         </SafeAreaView>
     )
@@ -53,6 +57,6 @@ const styles = StyleSheet.create(
         },
         Text : {
             fontSize : 20
-        }
+        },
     }
 )
