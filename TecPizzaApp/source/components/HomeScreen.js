@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 
 
 export default function HomeScreen({ route }) {
-    const { username } = route.params
+    const { orders } = route.params
     console.info(username)
     const navigation = useNavigation()
     return (
