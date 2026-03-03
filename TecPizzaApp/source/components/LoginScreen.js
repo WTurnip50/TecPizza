@@ -1,6 +1,7 @@
 import React, {useState}from "react";
 import { SafeAreaView, TextInput, Text, Image, TouchableOpacity,ToastAndroid, StyleSheet } from "react-native";
 import { useNavigation } from '@react-navigation/native';
+
 export default function LoginScreen(){
     const [User,SetUser] = useState('')
     const [Password,SetPassword] = useState('')
@@ -10,11 +11,10 @@ export default function LoginScreen(){
         {user: 'israel', password:'1234'},
         {user: 'juan', password:'juan2345'}
     ]
-
     const Login = () =>{
         users.forEach(element => {
             if(User === element.user && Password === element.password){
-                navigation.replace('Home')
+                navigation.replace('Home',{username : element.user})
             }
         });
     }
