@@ -7,7 +7,7 @@ export default function AboutUs() {
     const navigation = useNavigation()
 
     const goBackToHome = () => {
-        navigation.replace('Home')
+        navigation.goBack()
     }
 
     const goBackToLogin = () => {
@@ -23,7 +23,7 @@ export default function AboutUs() {
                 style={styles.Button}
                 onPress={goBackToHome}
             >
-                <Text style={styles.buttonText}>Volver a inicio</Text>
+                <Text style={styles.buttonText}>Volver a pantalla anterior</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.Button}
@@ -50,16 +50,19 @@ const styles = StyleSheet.create(
             marginTop: 30,
             marginBottom: 20
         },
-        Button: {
+       Button: {
             backgroundColor: '#e93224',
-            padding: 25,
+            padding: 15,
             borderRadius: 10,
+            justifyContent: 'center',
+            alignItems: 'center',
             margin: 25
         },
         buttonText: {
             color: '#fff',
             fontSize: 16,
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            textAlign: 'center'
         },
         Text: {
             fontSize: 20
